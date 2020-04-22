@@ -1,4 +1,4 @@
-require('./server/config/config');
+require('./config/config');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Archivo agrupador de rutas
-app.use(require('./server/routes/index'));
+app.use(require('./routes/index'));
 
 //Conexion a la base de datos
 mongoose.connect(process.env.URLDB, {

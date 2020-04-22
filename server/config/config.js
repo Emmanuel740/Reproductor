@@ -8,8 +8,9 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
-    urlDB = 'mongodb://localhost:27017/musica';
-} 
+    //urlDB = 'mongodb://localhost:27017/musica';
+    urlDB = 'mongodb+srv://admin:ortizdeluna10@cluster0-uw13s.mongodb.net/musica?retryWrites=true&w=majority';
+}
 
 process.env.URLDB = urlDB;
 
