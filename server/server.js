@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
 
-// Habilita CORS
+//Habilita Cors
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -17,7 +17,6 @@ app.use((req, res, next) => {
     );
     next();
 });
-
 //Parse aplication/x-www-form-urlencode
 app.use(bodyParser.urlencoded({ extended: false }));
 
