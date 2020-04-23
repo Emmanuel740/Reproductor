@@ -39,7 +39,11 @@ mongoose.connect(process.env.URLDB, {
 
         console.log('Base de datos Online');
     });
-
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 //Puerto de escucha de la aplicacion
 app.listen(process.env.PORT, () => {
     console.log("escuchando por el puerto: ", process.env.PORT);
