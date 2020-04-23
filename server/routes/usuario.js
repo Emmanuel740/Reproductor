@@ -89,7 +89,7 @@ app.put('/usuario/actualizar', (req, res) => {
 app.delete('/usuario/borrar', (req, res) => {
     let id = req.body.id;
 
-    Usuario.findByIdAndUpdate(id, { estado: false }, { new: true, runValidators: true, context: 'query' }, (err, resp) => {
+    Usuario.findOnedAndUpdate({ id: id }, { estado: false }, { new: true, runValidators: true, context: 'query' }, (err, resp) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
